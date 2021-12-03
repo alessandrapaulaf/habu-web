@@ -3,3 +3,8 @@ body {
   font-family: 'Inter', sans-serif;
   color: #FFFFFF;
 }
+
+a {
+  color: #5E20A4;
+  font-weight: bold;
+}

@@ -1,27 +1,33 @@
 import styled from 'styled-components';
 
+interface ILandingPageStyleProps {
+  isMain?: boolean;
+}
+
 export const Content = styled.div`
   width: 100%;
   height: 100%;
+  text-align: -webkit-center;
 `;
-
-export const Container = styled.div``;
 
 export const MainSection = styled.div`
   background: linear-gradient(314.72deg, #C86DD7 -1.5%, #7E49C3 39.43%, #5912AC 86.02%);
   width: 100%;
-  position: absolute;
+  text-align: -webkit-center;
+  position: relative;
+  z-index: -1;
 `;
 
 export const BannerImage = styled.img`
-  position: relative;
+  position: absolute;
   width: 100%;
   object-fit: cover;
   top: 0;
+  left: 0;
 `;
 
 export const Header = styled.div`
-  position: absolute;
+  position: relative;
   display: grid;
   grid-template-columns: 5% 20% 10% 10% 50%;
   align-items: center;
@@ -65,5 +71,87 @@ export const ActionButtons = styled.div`
 
   a {
     margin-left: 23px;
+  }
+`;
+
+export const TwoColumnsSection = styled.div<ILandingPageStyleProps>`
+  width: ${({ isMain }) => isMain ? '85%' : '75%'};
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 130px;
+  justify-content: space-between;
+`
+
+export const SectionInfo = styled.div`
+  width: 55%;
+
+  h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+`
+
+export const PlayButton = styled.div`
+  display: flex;
+  align-items: center;
+
+  a {
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 16px;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+export const NanyAvailableSection = styled.div`
+  width: 60%;
+  background-color: #ffffff;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+
+  a {
+    margin-left: 10px;
+  }
+  span {
+    color: #000000;
+    margin-left: 5px;
+  }
+`;
+
+export const SectionsContainer = styled.div`
+  width: 100%;
+  border-top: 1px solid #DFDFDF;
+  background-color: #F2F2F2;
+  text-align: -webkit-center;
+
+`;
+
+export const InfoParagraph = styled.div`
+  color: #3D3D3D;
+  font-weight: 500;
+  width: 40%;
+
+  h4 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    color: #4A4A4A;
   }
 `;
