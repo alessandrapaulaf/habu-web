@@ -5,11 +5,16 @@ import Nanny from '../../assets/images/nanny.png';
 import Banner from '../../assets/images/banner.png';
 import Alert from '../../assets/images/alert.png';
 import Notebook from '../../assets/images/notebook.png';
+import Calculate from '../../assets/images/calculate.png';
+import NannyTable from '../../assets/images/nanny-table.png';
 
 import {ReactComponent as HapuLogo} from '../../assets/icons/logo.svg';
 import {ReactComponent as PlayButtonIcon} from '../../assets/icons/play-button.svg';
+import {ReactComponent as PhoneIcon} from '../../assets/icons/phone.svg';
+import ContactForm from '../../components/ContactForm';
+import Footer from '../../components/Footer';
 
-export default function LandingPage() {
+export default function LandingPage(): JSX.Element {
   return (
     <S.Content>
       <S.MainSection>
@@ -39,12 +44,14 @@ export default function LandingPage() {
           <img src={Alert} alt="Alert nanny" />
         </S.TwoColumnsSection>
       </S.MainSection>
-      <S.NanyAvailableSection>
-        <img src={Nanny} alt="Avatar nanny" />
-        <a href="/">Sarah’s day care available now in North Sydney</a>
-        <span>Wednesday, Thursday, Friday - 7:30 - 5:30</span>
-      </S.NanyAvailableSection>
       <S.SectionsContainer>
+      <S.NanyAvailableSection>
+        <div className="nanny-container">
+          <img src={Nanny} alt="Avatar nanny" />
+          <a href="/">Sarah’s day care available now in North Sydney</a>
+          <span>Wednesday, Thursday, Friday - 7:30 - 5:30</span>
+        </div>
+      </S.NanyAvailableSection>
         <S.TwoColumnsSection>
           <S.InfoParagraph>
             <h4>Share your home, nanny and costs</h4>
@@ -59,7 +66,51 @@ export default function LandingPage() {
           </S.InfoParagraph>
           <img src={Notebook} alt="Notebook with nanny location" />
         </S.TwoColumnsSection>
+        <hr />
+        <S.OneColumnSection>
+          <h4>Are you a parent without a nanny and looking to share?</h4>
+          <h5>Leave us your name and email and we’ll update you as soon as a share becomes available in your area!</h5>
+          <ContactForm />
+        </S.OneColumnSection>
+        <hr />
+        <S.TwoColumnsSection>
+          <img src={Calculate} alt="Calculate nanny price" />
+          <S.InfoParagraph>
+            <h4>Shared payments made simple</h4>
+            <p>
+              Sometimes it’s hard enough just sharing a restaurant bill.
+              Try sharing that bill week in, week out and you might encounter more than a few snares.
+              But not with Hapu. Simply set your rates and our automated payment
+              system takes care of the rest. You need never talk money or who owes what.
+            </p>
+            <a href="/">Read how Bridget’s share (without Hapu) ended over $15</a>
+          </S.InfoParagraph>
+        </S.TwoColumnsSection>
+        <hr />
+        <S.OneColumnSection>
+          <h4 style={{fontSize: '28px'}}>A framework built for the long term</h4>
+          <p>
+            Childcare is for the long term. And you need a framework you can count
+            on that gives your share long term viability and success.
+            That’s why we’ve defined Hapu around our three tribal principles;
+            clearly defined process, transparency over money and equality of participation.
+          </p>
+          <a href="/">Read how Hapu’s tribal background defines our app </a>
+        </S.OneColumnSection>
+        <img src={NannyTable} alt="Table of nanny prices" />
+        <hr style={{marginTop: '100px'}} />
+        <S.OneColumnSection>
+          <PhoneIcon />
+          <h4 style={{fontSize: '28px'}}>Coming soon: Nanny Share Daily Diary!</h4>
+          <p>
+            With the Hapu daily diary your nanny will be able to update you and your
+            sharers with photos and commentary of the day. You and sharers will
+            receive notifications and you’ll be able to login to view the daily adventures
+            fo your little ones. We can’t wait!
+          </p>
+        </S.OneColumnSection>
       </S.SectionsContainer>
+      <Footer />
     </S.Content>
   );
 }

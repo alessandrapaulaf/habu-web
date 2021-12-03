@@ -16,6 +16,8 @@ export const MainSection = styled.div`
   text-align: -webkit-center;
   position: relative;
   z-index: -1;
+
+  min-height: 616px;
 `;
 
 export const BannerImage = styled.img`
@@ -45,6 +47,7 @@ export const Header = styled.div`
   }
 
   a {
+    cursor: pointer;
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
@@ -75,7 +78,7 @@ export const ActionButtons = styled.div`
 `;
 
 export const TwoColumnsSection = styled.div<ILandingPageStyleProps>`
-  width: ${({ isMain }) => isMain ? '85%' : '75%'};
+  width: ${({ isMain }) => isMain ? '85%' : '65%'};
   text-align: left;
   display: flex;
   align-items: center;
@@ -113,22 +116,28 @@ export const PlayButton = styled.div`
 `;
 
 export const NanyAvailableSection = styled.div`
-  width: 60%;
+  width: 100%;
   background-color: #ffffff;
   padding: 28px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
 
-  a {
-    margin-left: 10px;
+  .nanny-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+
+    a {
+      margin-left: 10px;
+    }
+    span {
+      color: #000000;
+      margin-left: 5px;
+    }
   }
-  span {
-    color: #000000;
-    margin-left: 5px;
-  }
+
 `;
 
 export const SectionsContainer = styled.div`
@@ -137,11 +146,16 @@ export const SectionsContainer = styled.div`
   background-color: #F2F2F2;
   text-align: -webkit-center;
 
+  hr {
+    color: #DFDFDF;
+    width: 50%;
+  }
+
 `;
 
 export const InfoParagraph = styled.div`
   color: #3D3D3D;
-  font-weight: 500;
+  font-weight: bold;
   width: 40%;
 
   h4 {
@@ -153,5 +167,35 @@ export const InfoParagraph = styled.div`
     font-size: 16px;
     line-height: 28px;
     color: #4A4A4A;
+    margin-bottom: 40px;
   }
+`;
+
+export const OneColumnSection = styled.div`
+  color: #3D3D3D;
+  padding: 64px;
+  display: block;
+
+  h4 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  h5 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  p {
+    max-width: 784px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  a {
+    margin-top: 50px;
+  }
+`;
+
+export const FooterContainer = styled.div`
 `;
