@@ -8,27 +8,18 @@ import Notebook from '../../assets/images/notebook.png';
 import Calculate from '../../assets/images/calculate.png';
 import NannyTable from '../../assets/images/nanny-table.png';
 
-import {ReactComponent as HapuLogo} from '../../assets/icons/logo.svg';
 import {ReactComponent as PlayButtonIcon} from '../../assets/icons/play-button.svg';
 import {ReactComponent as PhoneIcon} from '../../assets/icons/phone.svg';
 import ContactForm from '../../components/ContactForm';
 import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 
 export default function LandingPage(): JSX.Element {
   return (
     <S.Content>
       <S.MainSection>
         <S.BannerImage src={Banner} />
-        <S.Header>
-          <HapuLogo />
-          <a href="/">Create Your Nanny Share</a>
-          <a href="/">Browse Shares</a>
-          <a href="/">Our Story</a>
-          <S.ActionButtons>
-            <button>Become a Nanny Share Host</button>
-            <a href="/">Sign In</a>
-          </S.ActionButtons>
-        </S.Header>
+        <Header />
         <S.TwoColumnsSection isMain>
           <S.SectionInfo>
             <h1>Easily create or join a local nanny share with Hapu</h1>
@@ -41,7 +32,7 @@ export default function LandingPage(): JSX.Element {
               <a href="/">See hapu in action (27 seconds)</a>
             </S.PlayButton>
           </S.SectionInfo>
-          <img src={Alert} alt="Alert nanny" />
+          <img className="alert-nanny" src={Alert} alt="Alert nanny" />
         </S.TwoColumnsSection>
       </S.MainSection>
       <S.SectionsContainer>
@@ -88,7 +79,7 @@ export default function LandingPage(): JSX.Element {
         </S.TwoColumnsSection>
         <hr />
         <S.OneColumnSection>
-          <h4 style={{fontSize: '28px'}}>A framework built for the long term</h4>
+          <h4>A framework built for the long term</h4>
           <p>
             Childcare is for the long term. And you need a framework you can count
             on that gives your share long term viability and success.
@@ -97,11 +88,11 @@ export default function LandingPage(): JSX.Element {
           </p>
           <a href="/">Read how Hapu’s tribal background defines our app </a>
         </S.OneColumnSection>
-        <img src={NannyTable} alt="Table of nanny prices" />
+        <img className="nanny-table" src={NannyTable} alt="Table of nanny prices" />
         <hr style={{marginTop: '100px'}} />
         <S.OneColumnSection>
           <PhoneIcon />
-          <h4 style={{fontSize: '28px'}}>Coming soon: Nanny Share Daily Diary!</h4>
+          <h4>Coming soon: Nanny Share Daily Diary!</h4>
           <p>
             With the Hapu daily diary your nanny will be able to update you and your
             sharers with photos and commentary of the day. You and sharers will
