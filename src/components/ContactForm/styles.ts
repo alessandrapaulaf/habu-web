@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { mixins } from "../../styles/responsive";
 
-export const Form = styled.form`
+export const Form = styled.div`
   display: block;
   justify-content: space-evenly;
   align-items: center;
@@ -14,6 +14,13 @@ export const Form = styled.form`
     border-radius: 4px;
     padding: 14px 20px 14px 20px;
     margin-bottom: 10px;
+
+    &.error {
+      border-color: red;
+      ::placeholder {
+        color: red;
+      }
+    }
   }
 
   button {
@@ -26,6 +33,10 @@ export const Form = styled.form`
     padding: 14px 24px 14px 24px;
     cursor: pointer;
     margin-bottom: 30px;
+
+    :hover {
+      opacity: 0.9;
+    }
   }
 
   ${mixins.sm(css`

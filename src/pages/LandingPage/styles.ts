@@ -45,6 +45,7 @@ export const TwoColumnsSection = styled.div<ILandingPageStyleProps>`
 
   .alert-nanny {
     display: none;
+    max-width: 304px;
 
     ${mixins.sm(css`
       display: flex;
